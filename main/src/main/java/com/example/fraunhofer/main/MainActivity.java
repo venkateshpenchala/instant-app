@@ -1,8 +1,11 @@
 package com.example.fraunhofer.main;
 
+import android.app.ActivityOptions;
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -15,7 +18,6 @@ import android.widget.TextView;
 
 import com.example.fraunhofer.data.LocationServiceContract;
 import com.example.fraunhofer.data.model.DataModel;
-import com.example.fraunhofer.detail.DetailActivity;
 import com.example.fraunhofer.ui.LocationListAdapter;
 import com.example.fraunhofer.utilities.JSONhelper;
 
@@ -47,16 +49,36 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // Action called when clicked on each painting
-    /* public void getDetails(View view) {
+     public void getDetails(View view) {
         TextView titleClicked = (TextView) view.findViewById(R.id.title_text_view);
         String name = titleClicked.getText().toString();
 
-        Intent startChildActivityIntent = new Intent(MainActivity.this, DetailActivity.class);
+        /* Intent startChildActivityIntent = new Intent(MainActivity.this, DetailActivity.class);
 
         startChildActivityIntent.putExtra(Intent.EXTRA_TEXT, name);
 
-        startActivity(startChildActivityIntent);
-    } */
+        startActivity(startChildActivityIntent); */
+         MainActivity activity = MainActivity.this;
+         final Intent intent = getDetailActivityStartIntent(
+                 activity, name);
+
+         activity.startActivity(
+                 intent);
+    }
+
+
+    @NonNull
+    private static Intent getDetailActivityStartIntent(Context context, String name) {
+        final Intent intent = new Intent(Intent.ACTION_VIEW,
+                Uri.parse("https://example.com/detail"));
+        intent.setPackage(context.getPackageName());
+        intent.addCategory(Intent.CATEGORY_BROWSABLE);
+
+        // Working around unboxing issues with multiple dex files on platforms prior to N.
+
+        intent.putExtra(Intent.EXTRA_TEXT, name);
+        return intent;
+    }
 
     class Viewdata  extends AsyncTask<String,String,List<DataModel>> {
 
