@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.fraunhofer.detail">
+
+    <application >
+        <activity android:name=".DetailActivity"
+            android:parentActivityName="com.example.fraunhofer.main.MainActivity"
+            android:label="Fraunhofer IEM">
+            <intent-filter android:autoVerify="true" android:order="2">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!-- Accepts URIs that begin with "http://www.example.com/gizmos” -->
+                <data
+                    android:host="www.example.com"
+                    android:pathPrefix="/1"
+                    android:scheme="https" />
+                <!-- note that the leading "/" is required for pathPrefix -->
+                <!-- Accepts URIs that begin with "example://gizmos” -->
+                <data
+                    android:host="1"
+                    android:scheme="example" />
+
+                <!-- Accepts URIs that begin with "http://www.example.com/gizmos” -->
+                <data
+                    android:host="www.example.com"
+                    android:pathPrefix="/2"
+                    android:scheme="https" />
+                <!-- note that the leading "/" is required for pathPrefix -->
+                <!-- Accepts URIs that begin with "example://gizmos” -->
+                <data
+                    android:host="2"
+                    android:scheme="example" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

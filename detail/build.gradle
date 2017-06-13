@@ -1,0 +1,42 @@
+apply plugin: 'com.android.feature'
+
+android {
+    compileSdkVersion rootProject.compileSdk
+    buildToolsVersion rootProject.buildTools
+
+    defaultConfig {
+        minSdkVersion rootProject.minSdk
+        targetSdkVersion rootProject.targetSdk
+        versionCode rootProject.versionCode
+        versionName rootProject.versionName
+    }
+
+    dataBinding {
+        enabled true
+    }
+
+    signingConfigs {
+        release {
+            keyAlias rootProject.keystoreProperties['keyAlias']
+            keyPassword rootProject.keystoreProperties['keyPassword']
+            storeFile file(rootProject.keystoreProperties['storeFile'])
+            storePassword rootProject.keystoreProperties['storePassword']
+        }
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+        }
+        debug {}
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    api project(':base')
+}

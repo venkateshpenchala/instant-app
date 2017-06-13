@@ -1,0 +1,51 @@
+apply plugin: 'com.android.feature'
+
+android {
+    baseFeature true
+
+    compileSdkVersion rootProject.compileSdk
+    buildToolsVersion rootProject.buildTools
+
+    defaultConfig {
+        minSdkVersion rootProject.minSdk
+        targetSdkVersion rootProject.targetSdk
+        versionCode rootProject.versionCode
+        versionName rootProject.versionName
+    }
+
+    dataBinding {
+        enabled true
+    }
+
+    signingConfigs {
+        release {
+            keyAlias rootProject.keystoreProperties['keyAlias']
+            keyPassword rootProject.keystoreProperties['keyPassword']
+            storeFile file(rootProject.keystoreProperties['storeFile'])
+            storePassword rootProject.keystoreProperties['storePassword']
+        }
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+        }
+        debug {}
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    api "com.android.support:appcompat-v7:$rootProject.supportLib"
+    api "com.squareup.retrofit:retrofit:$rootProject.retrofit"
+    api "com.android.support:recyclerview-v7:$rootProject.supportLib"
+    api "com.github.bumptech.glide:glide:$rootProject.glide"
+
+    feature project(':main')
+    feature project(':detail')
+    application project(':app')
+}
