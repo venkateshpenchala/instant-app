@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.fraunhofer.detail">
 
-    <application >
+    <application android:networkSecurityConfig="@xml/network_security_config">
         <activity android:name=".DetailActivity"
             android:parentActivityName="com.example.fraunhofer.main.MainActivity"
             android:label="Fraunhofer IEM">

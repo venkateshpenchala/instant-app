@@ -40,7 +40,6 @@ public class MainActivity extends AppCompatActivity {
 
         // Get the actual data
         if(data != null) {
-            Log.d("MainActivity","Here I am" + data.getPath().substring(1));
             new Viewdata().execute(LocationServiceContract.LocationServiceEntry.LOCATION_ALL_BYKATEGORY_URL + data.getPath().substring(1));
         }
         else {
@@ -50,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
     // Action called when clicked on each painting
      public void getDetails(View view) {
-        TextView titleClicked = (TextView) view.findViewById(R.id.title_text_view);
+        TextView titleClicked = (TextView) view.findViewById(com.example.fraunhofer.fraunhoferiem.R.id.title_text_view);
         String name = titleClicked.getText().toString();
 
         /* Intent startChildActivityIntent = new Intent(MainActivity.this, DetailActivity.class);
