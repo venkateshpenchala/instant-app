@@ -13,6 +13,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -49,14 +50,18 @@ public class MainActivity extends AppCompatActivity {
 
     // Action called when clicked on each painting
      public void getDetails(View view) {
-        TextView titleClicked = (TextView) view.findViewById(com.example.fraunhofer.fraunhoferiem.R.id.title_text_view);
-        String name = titleClicked.getText().toString();
 
-        /* Intent startChildActivityIntent = new Intent(MainActivity.this, DetailActivity.class);
+        String name;
 
-        startChildActivityIntent.putExtra(Intent.EXTRA_TEXT, name);
+        if(view instanceof ImageView) {
+            ImageView imageClicked = (ImageView) view.findViewById(com.example.fraunhofer.fraunhoferiem.R.id.photo);
+            name = (String) imageClicked.getTag();
+        }
+        else {
+            TextView titleClicked = (TextView) view.findViewById(com.example.fraunhofer.fraunhoferiem.R.id.title_text_view);
+            name = titleClicked.getText().toString();
+        }
 
-        startActivity(startChildActivityIntent); */
          MainActivity activity = MainActivity.this;
          final Intent intent = getDetailActivityStartIntent(
                  activity, name);

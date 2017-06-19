@@ -1,5 +1,7 @@
 package com.example.fraunhofer.utilities;
 
+import android.util.Log;
+
 import com.example.fraunhofer.data.model.DataModel;
 
 import org.json.JSONArray;
@@ -42,7 +44,10 @@ public class JSONhelper {
                 JSONArray jsonArray = new JSONArray(result);
                 data = new ArrayList<>();
 
-                for (int i =0; i<buffer.length();i++){
+                Log.d("Here", "Buffer Length is = "+buffer.length());
+                Log.d("Here", "Buffer Length is = "+jsonArray.length());
+
+                for (int i =0; i<jsonArray.length();i++){
 
                     DataModel dataModel = new DataModel();
                     JSONObject jsonObject =jsonArray.getJSONObject(i);

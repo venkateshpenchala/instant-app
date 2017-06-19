@@ -46,6 +46,8 @@ public class LocationListAdapter  extends RecyclerView.Adapter<LocationListAdapt
         new DownloadImageTask(holder.imageView)
                 .execute(LocationServiceContract.LocationServiceEntry.STATIC_LOCATION + dataModel.getImage());
 
+        holder.imageView.setTag(dataModel.getName());
+
     }
 
 
