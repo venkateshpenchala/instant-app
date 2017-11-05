@@ -1,4 +1,4 @@
-package com.example.fraunhofer.data.model;
+package com.fraunhofer.fraunhofer.data.model;
 
 /**
  * Created by Venkatesh on 6/12/2017.

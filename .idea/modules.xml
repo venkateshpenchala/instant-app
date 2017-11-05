@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/FraunhoferIEM.iml" filepath="$PROJECT_DIR$/FraunhoferIEM.iml" />
+      <module fileurl="file://C:\Android\client\fraunhofer-indoor-services\FraunhoferIEM.iml" filepath="C:\Android\client\fraunhofer-indoor-services\FraunhoferIEM.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/base/base.iml" filepath="$PROJECT_DIR$/base/base.iml" />
       <module fileurl="file://$PROJECT_DIR$/detail/detail.iml" filepath="$PROJECT_DIR$/detail/detail.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fraunhofer-indoor-services.iml" filepath="$PROJECT_DIR$/fraunhofer-indoor-services.iml" />
       <module fileurl="file://$PROJECT_DIR$/instantapp/instantapp.iml" filepath="$PROJECT_DIR$/instantapp/instantapp.iml" />
       <module fileurl="file://$PROJECT_DIR$/main/main.iml" filepath="$PROJECT_DIR$/main/main.iml" />
     </modules>

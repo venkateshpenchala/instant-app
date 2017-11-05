@@ -1,4 +1,4 @@
-package com.example.fraunhofer.detail;
+package com.fraunhofer.fraunhofer.detail;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -11,10 +11,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ProgressBar;
 
-import com.example.fraunhofer.data.LocationServiceContract;
-import com.example.fraunhofer.data.model.DataModel;
-import com.example.fraunhofer.ui.LocationDetailAdapter;
-import com.example.fraunhofer.utilities.JSONhelper;
+import com.fraunhofer.fraunhofer.data.LocationServiceContract;
+import com.fraunhofer.fraunhofer.data.model.DataModel;
+import com.fraunhofer.fraunhofer.ui.LocationDetailAdapter;
+import com.fraunhofer.fraunhofer.utilities.JSONhelper;
 
 import java.util.List;
 

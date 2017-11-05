@@ -1,6 +1,5 @@
-package com.example.fraunhofer.main;
+package com.fraunhofer.fraunhofer.main;
 
-import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -11,16 +10,15 @@ import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.example.fraunhofer.data.LocationServiceContract;
-import com.example.fraunhofer.data.model.DataModel;
-import com.example.fraunhofer.ui.LocationListAdapter;
-import com.example.fraunhofer.utilities.JSONhelper;
+import com.fraunhofer.fraunhofer.data.LocationServiceContract;
+import com.fraunhofer.fraunhofer.data.model.DataModel;
+import com.fraunhofer.fraunhofer.ui.LocationListAdapter;
+import com.fraunhofer.fraunhofer.utilities.JSONhelper;
 
 import java.util.List;
 
@@ -54,11 +52,11 @@ public class MainActivity extends AppCompatActivity {
         String name;
 
         if(view instanceof ImageView) {
-            ImageView imageClicked = (ImageView) view.findViewById(com.example.fraunhofer.fraunhoferiem.R.id.photo);
+            ImageView imageClicked = (ImageView) view.findViewById(com.fraunhofer.fraunhofer.fraunhoferiem.R.id.photo);
             name = (String) imageClicked.getTag();
         }
         else {
-            TextView titleClicked = (TextView) view.findViewById(com.example.fraunhofer.fraunhoferiem.R.id.title_text_view);
+            TextView titleClicked = (TextView) view.findViewById(com.fraunhofer.fraunhofer.fraunhoferiem.R.id.title_text_view);
             name = titleClicked.getText().toString();
         }
 
@@ -74,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
     @NonNull
     private static Intent getDetailActivityStartIntent(Context context, String name) {
         final Intent intent = new Intent(Intent.ACTION_VIEW,
-                Uri.parse("https://example.com/detail"));
+                Uri.parse("https://midplan.de/detail"));
         intent.setPackage(context.getPackageName());
         intent.addCategory(Intent.CATEGORY_BROWSABLE);
 

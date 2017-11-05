@@ -1,4 +1,4 @@
-package com.example.fraunhofer.ui;
+package com.fraunhofer.fraunhofer.ui;
 
 /**
  * Created by Venkatesh on 6/12/2017.
@@ -14,14 +14,11 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.fraunhofer.data.LocationServiceContract;
-import com.example.fraunhofer.data.model.DataModel;
-import com.example.fraunhofer.fraunhoferiem.R;
+import com.fraunhofer.fraunhofer.data.LocationServiceContract;
+import com.fraunhofer.fraunhofer.data.model.DataModel;
+import com.fraunhofer.fraunhofer.fraunhoferiem.R;
 
-import java.io.IOException;
 import java.io.InputStream;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.List;
 
 public class LocationListAdapter  extends RecyclerView.Adapter<LocationListAdapter.LocationListViewHolder>  {

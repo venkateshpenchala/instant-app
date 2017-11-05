@@ -27,14 +27,28 @@ android {
         versionName rootProject.versionName
     }
 
+    signingConfigs {
+        release {
+            keyAlias "MyAndroidKey"
+            keyPassword "root96"
+            storeFile file("C:\\Demonstrator\\keystore\\android.jks")
+            storePassword "vaikuntam96"
+        }
+    }
+
     buildTypes {
-        release {}
-        debug {}
+        release {
+            signingConfig signingConfigs.release
+        }
+        debug {
+            debuggable false
+            signingConfig signingConfigs.release
+        }
     }
 }
 
 dependencies {
-    implementation project(":base")
-    implementation project(":main")
-    implementation project(":detail")
+    implementation project(':base')
+    implementation project(':main')
+    implementation project(':detail')
 }

@@ -1,4 +1,4 @@
-package com.example.fraunhofer.main;
+package com.fraunhofer.fraunhofer.main;
 
 import android.content.Intent;
 import android.os.Bundle;

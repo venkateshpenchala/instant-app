@@ -3,38 +3,39 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion rootProject.compileSdk
     buildToolsVersion rootProject.buildTools
-
     defaultConfig {
-        applicationId "com.example.fraunhofer.fraunhoferiem"
+        applicationId "com.fraunhofer.fraunhofer.fraunhoferiem"
         minSdkVersion rootProject.minSdk
         targetSdkVersion rootProject.targetSdk
-        versionCode rootProject.versionCode
-        versionName rootProject.versionName
+        versionName '2'
+        setProperty("archivesBaseName", "Location Services")
+        versionCode 2
     }
-
     dataBinding {
         enabled true
     }
-
     signingConfigs {
         release {
-            keyAlias rootProject.keystoreProperties['keyAlias']
-            keyPassword rootProject.keystoreProperties['keyPassword']
-            storeFile file(rootProject.keystoreProperties['storeFile'])
-            storePassword rootProject.keystoreProperties['storePassword']
+            keyAlias "MyAndroidKey"
+            keyPassword "root96"
+            storeFile file("C:\\Demonstrator\\keystore\\android.jks")
+            storePassword "vaikuntam96"
         }
     }
-
     buildTypes {
         release {
             signingConfig signingConfigs.release
         }
-        debug {}
+        debug {
+            debuggable false
+        }
+    }
+    productFlavors {
     }
 }
 
 dependencies {
-    implementation project(":base")
-    implementation project(":main")
-    implementation project(":detail")
+    implementation project(':base')
+    implementation project(':main')
+    implementation project(':detail')
 }

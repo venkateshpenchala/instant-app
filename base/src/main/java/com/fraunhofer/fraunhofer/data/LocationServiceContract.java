@@ -1,4 +1,4 @@
-package com.example.fraunhofer.data;
+package com.fraunhofer.fraunhofer.data;
 
 import android.provider.BaseColumns;
 

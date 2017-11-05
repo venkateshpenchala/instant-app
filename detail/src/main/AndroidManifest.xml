@@ -1,39 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.fraunhofer.detail">
+    package="com.fraunhofer.fraunhofer.detail">
+
+    <!--
+         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but you must specify either coarse or fine
+         location permissions for the 'MyLocation' functionality. 
+    -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application android:networkSecurityConfig="@xml/network_security_config">
-        <activity android:name=".DetailActivity"
-            android:parentActivityName="com.example.fraunhofer.main.MainActivity"
-            android:label="Fraunhofer IEM">
+        <activity
+            android:name=".DetailActivity"
+            android:label="Fraunhofer IEM"
+            android:parentActivityName="com.fraunhofer.fraunhofer.main.MainActivity">
             <intent-filter
                 android:autoVerify="true"
                 android:order="2">
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.BROWSABLE" />
                 <category android:name="android.intent.category.DEFAULT" />
 
-                <data android:host="example.com" />
+                <data android:host="midplan.de" />
                 <data android:pathPrefix="/detail" />
-                <data android:scheme="https" />
                 <data android:scheme="http" />
-
+                <data android:scheme="https" />
                 <data
-                    android:host="example.com"
+                    android:host="midplan.de"
                     android:pathPrefix="/1"
-                    android:scheme="https" />
+                    android:scheme="http" />
                 <data
-                    android:host="example.com"
+                    android:host="midplan.de"
                     android:pathPrefix="/2"
-                    android:scheme="https" />
-
+                    android:scheme="http" />
                 <data
-                    android:host="example.com"
+                    android:host="midplan.de"
                     android:pathPrefix="/3"
-                    android:scheme="https" />
+                    android:scheme="http" />
+                <data android:scheme="https" />
             </intent-filter>
-
         </activity>
+
     </application>
 
 </manifest>

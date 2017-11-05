@@ -1,8 +1,8 @@
-package com.example.fraunhofer.utilities;
+package com.fraunhofer.fraunhofer.utilities;
 
 import android.util.Log;
 
-import com.example.fraunhofer.data.model.DataModel;
+import com.fraunhofer.fraunhofer.data.model.DataModel;
 
 import org.json.JSONArray;
 import org.json.JSONException;
